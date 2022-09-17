@@ -4,49 +4,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-	List<NtcVO> ntcList = (List<NtcVO>) session.getAttribute("ntcList");
-	vo.set
+	List<NtcVO> ntcList = (List<NtcVO>) request.getAttribute("ntcList");
+	
 
 	String msg = session.getAttribute("msg") == null ? "" : (String) session.getAttribute("msg");
 	session.removeAttribute("msg");
+	NtcVO vo = new NtcVO();
+	vo.setNtcTit(request.getParameter("ntcTit"));
 	
-	int cnt = ntcList.size();
-	
-	// 한 페이지에  출력될 글 수
-	int pageSize = 10;
-	
-	// 현 페이지 설정 정보
-	String pageNum = request.getParameter("pageNum");
-	if(pageNum == null){
-		pageNum = "1";
-	}
-	
-	int currentPage = Integer.parseInt(pageNum);   
-	int startRow = (currentPage-1)*pageSize + 1;
-    int endRow = startRow + (pageSize -1);
-
 %>
-<%if(cnt != 0){ 
-      ////////////////////////////////////////////////////////////////
-      // 페이징 처리
-      // 전체 페이지수 계산
-      int pageCount = cnt / pageSize + (cnt%pageSize==0?0:1);
-      
-      // 한 페이지에 보여줄 페이지 블럭
-      int pageBlock = 10;
-      
-      // 한 페이지에 보여줄 페이지 블럭 시작번호 계산
-      int startPage = ((currentPage-1)/pageBlock)*pageBlock+1;
-      
-      // 한 페이지에 보여줄 페이지 블럭 끝 번호 계산
-      int endPage = startPage + pageBlock-1;
-      if(endPage > pageCount){
-         endPage = pageCount;
-      }   
-      if(endRow > (cnt-1)){
-         endRow = cnt-1;
-      }
-   %>
 
 <!DOCTYPE html>
 <html>
@@ -67,9 +33,11 @@
 			<h3>공지사항을 빠르고 정확하게 안내해드립니다.</h3>
 			<form action="search.do" method="GET">
 			    <div class="mx-quto input-group mt-5">
+						<button type="button" class="btn btn-info" ><a href="list.do" >전체목록</a></button>
 			        <mx-auto>
 			            <input name="ntcTit" type="text" class="form-control" placeholder="검색어 입력" aria-label="search" aria-describedby="button-addon2" value="">
 			        </mx-auto>
+			        
 			        <button class="btn btn-success" type="submit" id="button-addon2">검색</button>
 			    </div>
 			</form>
@@ -84,7 +52,9 @@
 				</div>
 
 				<%
-					for (int i = startRow; i <= endRow; i++) {
+					int ntcSize = ntcList.size();
+					if(ntcSize > 0 ){
+					for (int i = 0; i < ntcSize; i++) {
 				%>
 
 				<div>
@@ -105,28 +75,13 @@
 					</div>
 				</div>
 				<%
-				};
+						}
+					} else {
 				%>
 			</div>
-
-			<div class="board_page">
-				<% if(startPage>pageBlock){ %>
-			      <a class="bt first" href="list.do?pageNum=<%=startPage-pageBlock%>">&nbsp;Prev</a>
-			   <%} %>
-			    
-			   <% for(int i=startPage;i<=endPage;i++){ %>
-					<% if(i == currentPage){ %>
-						<a class="num on" href="list.do?pageNum=<%=i%>"><%=i %>&nbsp;</a>
-					<% } else { %>
-						<a class="num" href="list.do?pageNum=<%=i%>"><%=i %>&nbsp;</a>
-					<% } %>
-			   <%} %>
-			  
-			   <% if(endPage<pageCount){ %>
-			      <a class="bt last" href="list.do?pageNum=<%=startPage+pageBlock%>">&nbsp;Next</a>
-			   <%} %>
-
-			</div>
+				<%
+					}
+				%>
 			<div class="bt_wrap">
 				<a href="../ntc/regist.do" class="on">새글 작성</a>
 				<input id="del_btn" type="button"  value="체크박스 삭제" onclick="f_del()">
@@ -141,7 +96,6 @@
 		alert("정상적으로 처리되었습니다.");
 	</script>
 			   	<% } %>
-	<% } %>
 
 	<script>
 		var btn = document.querySelector("#check");

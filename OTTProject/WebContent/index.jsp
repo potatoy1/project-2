@@ -35,7 +35,7 @@
 		<section id="one" class="wrapper style1 special">
 			<div class="inner">
 				<header class="major">
-					<h1디즈니++ 데이와 함께 당신이 사랑하는 모든 이야기와 콘텐츠를 즐기세요.</h1>
+					<h1>디즈니++ 데이와 함께 당신이 사랑하는 모든 이야기와 콘텐츠를 즐기세요.</h1>
 				</header>
 				<ul class="icons major">
 					<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>

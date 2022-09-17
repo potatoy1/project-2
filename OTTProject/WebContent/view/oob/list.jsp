@@ -4,6 +4,7 @@
 <% List<OobVO> oobList = (List<OobVO>) request.getAttribute("oobList");
 String msg = session.getAttribute("msg") == null ? "" : (String) session.getAttribute("msg");
 session.removeAttribute("msg");%>
+<% System.out.println(oobList); %>
 <!DOCTYPE HTML>
 
 <html>

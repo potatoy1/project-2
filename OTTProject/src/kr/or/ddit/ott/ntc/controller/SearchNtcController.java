@@ -21,9 +21,10 @@ public class SearchNtcController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 1. 서비스 객체 생성하기
 		INtcService ntcService = NtcService.getInstance();
-		
+		NtcVO vo = new NtcVO();
+		vo.setNtcTit(req.getParameter("ntcTit"));
 		// 2. 검색회원 목록 조회
-		List<NtcVO> ntcList = ntcService.getAllNtcList();
+		List<NtcVO> ntcList = ntcService.searchNtcList(vo);
 		
 		req.setAttribute("ntcList", ntcList);
 		

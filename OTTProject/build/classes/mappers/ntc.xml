@@ -65,7 +65,7 @@
 			and ntc_num = #{ntcNum}
 		</if>
 		<if test="ntcTit != null and ntcTit != ''">
-			and ntc_tit = #{ntcTit}
+			and ntc_tit like '%' || #{ntcTit} || '%'
 		</if>
 		<if test="ntcCon != null and ntcCon != ''">
 			and ntc_con = #{ntcCon}

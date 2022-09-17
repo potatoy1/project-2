@@ -16,6 +16,7 @@
 		<typeAlias type="kr.or.ddit.ott.ntc.vo.NtcVO" alias="ntcVO" />
 		<typeAlias type="kr.or.ddit.ott.vdodtl.vo.VdodtlVO" alias="vdodtlVO" />
 		<typeAlias type="kr.or.ddit.ott.oob.vo.OobVO" alias="oobVO" />
+		<typeAlias type="kr.or.ddit.ott.wislist.vo.WisListVO" alias="WisListVO" />
  		<typeAlias type="comm.vo.AtchFileVO" alias="atchVO" />
 	</typeAliases>
 
@@ -41,6 +42,7 @@
 		<mapper resource="mappers/ntc.xml" />
 		<mapper resource="mappers/vdodtl.xml" />
 		<mapper resource="mappers/oob.xml" />
+		<mapper resource="mappers/wisList.xml" />
 	</mappers>
 	
 </configuration>

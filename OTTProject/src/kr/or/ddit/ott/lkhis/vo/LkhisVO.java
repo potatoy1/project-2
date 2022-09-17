@@ -3,9 +3,11 @@ package kr.or.ddit.ott.lkhis.vo;
 import java.sql.Date;
 
 public class LkhisVO {
+	
 	private String lkhisNum;
 	private Date lkhisDown;
-
+	
+	
 	public LkhisVO() {}
 
 	public LkhisVO(String lkhisNum, Date lkhisDown) {
