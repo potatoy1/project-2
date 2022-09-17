@@ -32,7 +32,7 @@
                                 <div class="title">
                                     <dl>
                                         <dt>제목</dt>
-                                        <dd><input type="text" name="oobTit" value="" placeholder="제목 입력" required>
+                                        <dd><input type="text" name="oobTit" value="" placeholder="제목 입력" required oninvalid="f_check1(this)">
                                         </dd>
                                     </dl>
                                 </div>
@@ -71,6 +71,12 @@
         <script src="../view/js/breakpoints.min.js"></script>
         <script src="../view/js/util.js"></script>
         <script src="../view/js/main.js"></script>
+        <script>
+	    	function f_check1(p_this){
+	    		p_this.setCustomValidity('제목을 입력해주세요!');
+	    		p_this.focus();
+	    	}
+        </script>
 
 </body>
 

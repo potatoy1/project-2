@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <header id="header">
 			<h1><a href="/OTTProject/index.jsp"><img id="logo" src="/OTTProject/view/img/logo.png"></a></h1>
-			<button type="button" a href="view/main/genre.jsp">kids</button>
+				<button type="button" onclick="location='view/main/genre.jsp'">kids</button>
 		
 			<nav id="nav">
 				<ul>
@@ -45,7 +45,6 @@
 										</li>
 										<li>
 											<p class="title"><a href="#">log out</a></p>
-											<div class="con">Lore type of Lorem Ipsum.</div>
 										</li>
 									
 									</ul>

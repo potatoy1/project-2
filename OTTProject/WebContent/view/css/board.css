@@ -17,10 +17,6 @@ a {
     color: inherit;
 }
 
-#paging {
-	font-size: 22pt;
-}
-
 .board_wrap {
     width: 1000px;
     margin: 100px auto;
@@ -28,6 +24,7 @@ a {
 
 .board_title {
     margin-bottom: 30px;
+    
 }
 
 .board_title strong {
@@ -220,6 +217,9 @@ a {
     font-size: 1.4rem;
 }
 
+.board_view .info dl dt {
+
+}
 
 .board_view .info dl dd {
     margin-left: 10px;
@@ -299,6 +299,26 @@ a {
     box-sizing: border-box;
     border: 0;
     resize: vertical;
+}
+.input-group {
+	justify-content: flex-end;
+	
+}
+.input-group .btn {
+    position: relative;
+    z-index: 2;
+    margin-left: 12px;
+}
+.btn {
+	width: 50px;
+}
+.form-control {
+	width: 100%;
+	line-height: 3;
+}
+.a {
+	text-decoration: none;
+	color: black;
 }
 
 @media (max-width: 1000px) {
@@ -381,5 +401,6 @@ a {
     .board_write .info input[type="password"] {
         width: 100%;
     }
+   
 
 }

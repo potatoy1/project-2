@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../view/css/board.css">
 </head>
 <body>
+
 <form id="id_rform" action="update.do" method="post">
     <input type="hidden" name="nm_gnum" value="">
     <div class="board_wrap">
@@ -45,8 +46,7 @@
             </div>
             <div class="bt_wrap">
                 <a href="update.do?ntcNum=${vo.ntcNum}">수정하기</a>
-                
-                <a href="delete.do?ntcNum=${vo.ntcNum}">삭제하기</a>
+                <a href="list.do">뒤로가기</a>
                 
             </div>
         </div>

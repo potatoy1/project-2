@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wislist">
+
+	<insert id="insert" parameterType="wisListVO">
+  
+	     INSERT INTO wislist (wislist_num,wislist_date) 
+	     VALUES (#{wislistNum}, #{wislistDate}) 
+ 
+	</insert>
+
+	<resultMap type="wisListVO" id="wislistMap">
+
+		<result property="wislistNum" column="wislist_num" />
+		<result property="wislistDate" column="wislist_date" />
+
+	</resultMap>
+
+	<select id="getAllWisList" resultMap="wislistMap">
+            
+        SELECT * FROM wislist WHERE wislist_num = #{wislistNum}
+
+	</select>
+
+	<delete id="delete" parameterType="String">
+  
+        DELETE FROM wislist WHERE wislist_num = #{wislistNum}
+   
+	</delete>
+</mapper>

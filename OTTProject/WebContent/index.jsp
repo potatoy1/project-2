@@ -25,7 +25,7 @@
 					</p>
 				<ul class="actions special">
 					<li><a href="#" class="button primary">회원가입</a></li>
-					<li><a href="#" class="button primary">로그인</a></li>
+					<li><a href="" class="button primary">로그인</a></li>
 				</ul>
 			</div>
 			<a href="#one" class="more scrolly">구경해보기</a>
@@ -35,7 +35,7 @@
 		<section id="one" class="wrapper style1 special">
 			<div class="inner">
 				<header class="major">
-					<h2>디즈니++ 데이와 함께 당신이 사랑하는 모든 이야기와 콘텐츠를 즐기세요.</h2>
+					<h1디즈니++ 데이와 함께 당신이 사랑하는 모든 이야기와 콘텐츠를 즐기세요.</h1>
 				</header>
 				<ul class="icons major">
 					<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
@@ -50,8 +50,8 @@
 			<section class="spotlight">
 				<div class="image"><img src="view/img/pcmoblie.jpg" /></div>
 				<div class="content">
-					<h2>취향에 따라 골라보는 다양한<br />
-						컨텐츠가 모두 한자리에</h2>
+					<h1>취향에 따라 골라보는 다양한<br />
+						컨텐츠가 모두 한자리에</h1>
 					<p>디즈니++는 디즈니, 픽사, 마블, 스타워즈, 내셔널지오그래픽, Star의 최고 콘텐츠들을 모두 한곳에 모아 제공합니다.<br /></p>
 					
 					<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla
@@ -92,7 +92,7 @@
 		<section id="three" class="wrapper style3 special">
 			<div class="inner">
 				<header class="major">
-					<h2>더 감동적으로, 무한한 Star의 세상</h2>
+					<h1>더 감동적으로, 무한한 Star의 세상</h1>
 					<p>디즈니+에서 Star와 함께 새로운 엔터테인먼트의 세계를 경험해 보세요.<br>
 						Star는 어른을 위한 시리즈와 영화를 포함해 모든 취향을 고려한 다양한 콘텐츠를 제공합니다.</p>
 				</header>
@@ -162,7 +162,7 @@
 		<!-- CTA -->
 		<section id="cta" class="wrapper style4">
 			<div class="accordion-box">
-				<div class="list">
+				<div class="qnalist">
 					<h2 class="qa">자주 묻는 질문</h2>
 					<div class="accordion-container">
 						<div>

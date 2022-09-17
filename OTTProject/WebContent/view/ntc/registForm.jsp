@@ -19,7 +19,7 @@
                 <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text" name="ntcTit" value="" placeholder="제목 입력" required></dd>
+                        <dd><input type="text" name="ntcTit" value="" placeholder="제목 입력" required oninvalid="f_check1(this)"></dd>
                     </dl>
                 </div>
                 <div class="info">
@@ -40,5 +40,11 @@
     </div>
 
 </form>
+<script>
+	function f_check1(p_this){
+		p_this.setCustomValidity('제목을 입력해주세요!');
+		p_this.focus();
+	}
+</script>
 </body>
 </html>

@@ -24,77 +24,7 @@
 			<div id="page-wrapper">
 
 				<!-- Header -->
-<<<<<<< .mine
-					<%@include file ="../../header.jsp" %>
-<!-- 				<header id="header" class="alt"> -->
-<!-- 					<h1><a href="../../index.jsp"><img id="logo" src="../img/logo.png" style="z-index: 999;"></a></h1> -->
-<!-- 					<button type="button">kids</button> -->
-					
-					
-||||||| .r274298
-				<header id="header" class="alt">
-					<h1><a href="../../index.jsp"><img id="logo" src="../img/logo.png" style="z-index: 999;"></a></h1>
-					<button type="button">kids</button>
-					
-					<nav id="nav">
-						<ul>
-							<li class="special">
-								<a href="#menu" class="menuToggle"><span>Menu</span></a>
-								<div id="menu">
-		
-									<ul>
-										<div class="accordion-box">
-											<ul class="list">
-												<li>
-													<p class="title"><a class="title" href="index.jsp">Home</a></p>
-												</li>
-												<li>
-													<p class="title"><a href="view/main/main.jsp">인기영상</a></p>
-												</li>
-												<li>
-													<p class="title"><a href="#">장르별 조회</a></p>
-													<div class="con">
-													<a href="genre.jsp" style="text-decoration:none">로맨스</a><br>
-													<a href="genre.jsp">코미디</a><br>
-													<a href="genre.jsp">스릴러</a><br>
-													<a href="genre.jsp">미스터리</a><br>
-													<a href="genre.jsp">액션</a><br>
-													<a href="genre.jsp">판타지</a><br>
-													<a href="genre.jsp">공포</a><br>
-													<a href="genre.jsp">키즈</a><br>
-													<a href="genre.jsp">애니메이션</a><br>
-												</div>
-												</li>
-												<li>
-													<p class="title"><a href="#">마이페이지</a></p>
-													<div class="con"><a href="elements.html" style="text-decoration:none">본인정보</a><br>
-													<a href="elements.html">결제내역</a><br>
-													<a href="elements.html">시청기록</a><br>
-													<a href="elements.html">찜목록</a><br>
-													<a href="ntc/list.do">고객센터</a><br>
-												</div>
-												</li>
-												<li>
-													<p class="title"><a href="#">log out</a></p>
-													<div class="con">Lore type of Lorem Ipsum.</div>
-												</li>
-											
-											</ul>
-										</div>
-										<!-- <li><a href="index.html">Home</a></li>
-													<li><a href="generic.html">인기영상</a></li>
-													<li><a href="elements.html">내가 찜한 목록</a></li>
-													<li><a href="#">Sign Up</a></li>
-													<li><a href="#">Log In</a></li> -->
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</nav>
-				</header>
-=======
 				<%@include file ="../../header.jsp" %>
->>>>>>> .r274360
 
 				<!-- Main -->
 					<div id="main-banner">
@@ -240,25 +170,7 @@
 					</script>
 					
 					<!-- Footer -->
-<<<<<<< .mine
 					<%@include file ="../../footer.jsp" %>
-||||||| .r274298
-					<footer id="footer">
-					<p class="footnote">디지니플러스플러스 책임회사 | 대표자: 이승연 | 서울특별시 강남구 테헤란로 15295638, 747층 (우편번호: 0600236) |
-						Email: helper@disineyplusplus.kr | 연락처: 0800 80122 14016 |<br> 사업자등록번호: 22110-801-033147 | 통신판매업 신고번호:
-						제24021-서울강남-0542456호 |<br>
-						비디오물배급업 신고번호: 제2016-142726호 <br><br>디지니++의 콘텐츠는 서비스 여부에 따라 달라질 수 있습니다.<br>
-						© 2022 Disineyplusplus and its related entities. All Rights Reserved.</p>
-					<ul class="copyright">
-						<li>&copy; Disineyplusplus</li>
-						<li>Design: <a href="http://html5up.net">Disineyplusplus</a></li>
-					</ul>
-				</footer>
-
-=======
-					<%@include file ="../../footer.jsp" %>
-
->>>>>>> .r274360
 			</div>
 
 	</body>
