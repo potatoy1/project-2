@@ -1,0 +1,182 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Disney Main</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	
+
+		<style>
+			div{
+				/* border: 3px solid red; */
+			}
+		</style>
+	</head>
+
+	
+	<body class="landing">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<%@include file ="../../header.jsp" %>
+<!-- 				<header id="header" class="alt"> -->
+<!-- 					<h1><a href="../../index.jsp"><img id="logo" src="../img/logo.png" style="z-index: 999;"></a></h1> -->
+<!-- 					<button type="button">kids</button> -->
+					
+					
+
+				<!-- Main -->
+					<div id="main-banner">
+						<div id="slideShow">
+							<input type="button" value="&lang;" id="btnLeft">
+							<input type="button" value="&rang;" id="btnRight">
+							<div class="slider" id="slider">
+								<img src="../img/contents/공조가로2.jpg" id="main-img">
+								<img src="../img/contents/수리남가로.jpg" id="main-img">
+								<img src="../img/contents/마녀가로.jpg" id="main-img">
+								<img src="../img/contents/헤어질결심가로.jpg" id="main-img">
+							</div>
+						</div>
+						
+						<section class="wrapper style5">
+							<div class="inner">
+								<div>
+									<h1>실시간 인기 프로그램</h1>
+								</div>
+								<div>
+									<input type="button" value="&lang;" id="content1-btnLeft" class="btncommL">
+									<input type="button" value="&rang;" id="content1-btnRight" class="btncommR">
+									<div class="swiper-content" id="swiperContent1">
+										<img src="../img/contents/공조.jpg" id="content-img">
+										<img src="../img/contents/수리남.jpg" id="content-img">
+										<img src="../img/contents/마녀.jpg" id="content-img">
+										<img src="../img/contents/헤어질결심.jpg" id="content-img">
+										<img src="../img/contents/범죄도시.jpg" id="content-img">
+									</div>
+								</div>
+								<div>
+									<h1>오늘의 TOP 20</h1>
+								</div>
+								<div>
+									<input type="button" value="&lang;" id="content2-btnLeft" class="btncommL">
+									<input type="button" value="&rang;" id="content2-btnRight" class="btncommR">
+									<div class="swiper-content" id="swiperContent2">
+										<img src="../img/contents/공조.jpg" id="content-img">
+										<img src="../img/contents/수리남.jpg" id="content-img">
+										<img src="../img/contents/마녀.jpg" id="content-img">
+										<img src="../img/contents/헤어질결심.jpg" id="content-img">
+										<img src="../img/contents/범죄도시.jpg" id="content-img">
+									</div>
+								</div>
+								<div>
+									<h1>온 가족이 함께 보면 좋을 영화</h1>
+								</div>
+								<div>
+									<input type="button" value="&lang;" id="content3-btnLeft" class="btncommL">
+									<input type="button" value="&rang;" id="content3-btnRight" class="btncommR">
+									<div class="swiper-content" id="swiperContent3">
+										<img src="../img/contents/공조.jpg" id="content-img">
+										<img src="../img/contents/수리남.jpg" id="content-img">
+										<img src="../img/contents/마녀.jpg" id="content-img">
+										<img src="../img/contents/헤어질결심.jpg" id="content-img">
+										<img src="../img/contents/범죄도시.jpg" id="content-img">
+									</div>
+								</div>
+								<div>
+									<h1>두근두근 Coming Soon</h1>
+								</div>
+								<div>
+									<input type="button" value="&lang;" id="content4-btnLeft" class="btncommL">
+									<input type="button" value="&rang;" id="content4-btnRight" class="btncommR">
+									<div class="swiper-content" id="swiperContent4">
+										<img src="../img/contents/공조.jpg" id="content-img">
+										<img src="../img/contents/수리남.jpg" id="content-img">
+										<img src="../img/contents/마녀.jpg" id="content-img">
+										<img src="../img/contents/헤어질결심.jpg" id="content-img">
+										<img src="../img/contents/범죄도시.jpg" id="content-img">
+								</div>
+							</div>
+						</section>
+					</div>
+
+					<script>
+						var $slider = $("#slider");
+							$("#btnLeft").on("click", function () {
+								var $childs = $slider.children();
+								$slider.append(
+									$childs.eq(0));
+							})
+
+							$("#btnRight").on("click", function () {
+								var $childs = $slider.children();
+								$slider.prepend(
+									$childs.eq(3));
+							})
+								
+						var $swiperContent1 = $("#swiperContent1");						
+							$("#content1-btnLeft").on("click", function () {
+								var $childs = $swiperContent1.children();
+								$swiperContent1.append(
+									$childs.eq(0));
+							})
+
+							$("#content1-btnRight").on("click", function () {
+								var $childs = $swiperContent1.children();
+								$swiperContent1.prepend(
+									$childs.eq(4));
+							})
+
+						var $swiperContent2 = $("#swiperContent2");
+							$("#content2-btnLeft").on("click", function () {
+								var $childs = $swiperContent2.children();
+								$swiperContent2.append(
+									$childs.eq(0));
+							})
+
+							$("#content2-btnRight").on("click", function () {
+								var $childs = $swiperContent2.children();
+								$swiperContent2.prepend(
+									$childs.eq(4));
+							})
+
+						var $swiperContent3 = $("#swiperContent3");
+							$("#content3-btnLeft").on("click", function () {
+								var $childs = $swiperContent3.children();
+								$swiperContent3.append(
+									$childs.eq(0));
+							})
+
+							$("#content3-btnRight").on("click", function () {
+								var $childs = $swiperContent3.children();
+								$swiperContent3.prepend(
+									$childs.eq(4));
+							})
+
+						var $swiperContent4 = $("#swiperContent4");
+							$("#content4-btnLeft").on("click", function () {
+								var $childs = $swiperContent4.children();
+								$swiperContent4.append(
+									$childs.eq(0));
+							})
+
+							$("#content4-btnRight").on("click", function () {
+								var $childs = $swiperContent4.children();
+								$swiperContent4.prepend(
+									$childs.eq(4));
+							})
+
+
+					</script>
+					
+					<!-- Footer -->
+					<%@include file ="../../footer.jsp" %>
+			</div>
+
+	</body>
+</html>

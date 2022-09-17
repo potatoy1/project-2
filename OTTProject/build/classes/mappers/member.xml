@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+
+	<insert id="membership" parameterType="kr.or.ddit.ott.mem.vo.MemberVO">
+
+		INSERT INTO MEM (mem_Num, mem_Em, mem_Nm, mem_Tel, mem_Pw, mem_Nal, mem_Bir)
+		VALUES (mem_Num.nextval, #{memEm}, #{memName}, #{memTel}, #{memPw},
+				 #{memNal}, #{memBir})
+	
+	</insert>
+	
+	<select id="duplicateEmail" parameterType="String" resultType="int">
+
+		SELECT count(*)
+		FROM MEM
+		WHERE mem_em = #{memEm}
+
+	</select>
+
+	<select id="login" parameterType="kr.or.ddit.ott.mem.vo.MemberVO" resultType="kr.or.ddit.ott.mem.vo.MemberVO">
+
+		SELECT *
+		FROM MEM
+		WHERE mem_em = #{memEm}
+		AND mem_pw = #{memPw}
+
+	</select>
+
+</mapper>
