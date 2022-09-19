@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import kr.or.ddit.ott.mem.vo.MemberVO;
+import kr.or.ddit.ott.ntc.vo.NtcVO;
+import kr.or.ddit.ott.wachis.vo.WacHisVO;
 import util.MyBatisUtil;
 
 public class WacHisDAO {
@@ -20,53 +22,17 @@ public class WacHisDAO {
 		sqlSession = MyBatisUtil.getInstance(true);
 	}
 
-	// 회원가입
-	public int membership(MemberVO mv) {
-		int cnt = sqlSession.insert("member.membershipMember", mv);
 
+	// 전체 시청 내역
+	public List<WacHisVO> getAllWacHisList() {
+		List<WacHisVO> wachisList = sqlSession.selectList("wachis.getAllwachisList");
+		return wachisList;
+	}
+	// 시청 내역 삭제
+	public int delete(String wachisNum) {
+		int cnt = sqlSession.delete("wachis.delete",wachisNum);
 		return cnt;
 	}
-
-	// 로그인
-	public int login(MemberVO mv) {
-
-		int cnt = sqlSession.selectOne("member.loginMember", mv);
-
-		return cnt;
-	}
-
-	// 비밀번호찾기
-	public int findPw(MemberVO mv) {
-
-		int cnt = sqlSession.selectOne("member.findPwMember", mv);
-
-		return cnt;
-	}
-
-	// 마이페이지 본인정보 수정
-	public int MyPageMember(MemberVO mv) {
-
-		int cnt = sqlSession.update("member.updateMember", mv);
-
-		return cnt;
-	}
-
-	// 회원 탈퇴
-	public int deleteMember(String memId) {
-
-		int cnt = sqlSession.delete("member.deleteMember", memId);
-
-		return cnt;
-	}
-
-	// 마이페이지 본인정보 확인
-	public List<MemberVO> MypageList() {
-
-		List<MemberVO> memList = sqlSession.selectList("member.MypageList");
-
-		return memList;
-	}
-	
 	
 
 }

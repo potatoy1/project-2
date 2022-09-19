@@ -1,3 +1,4 @@
+<%@page import="comm.vo.AtchFileVO"%>
 <%@page import="kr.or.ddit.ott.vdodtl.vo.VdodtlVO"%>
 <%@page import="java.util.List"%>
 
@@ -14,7 +15,12 @@ session.removeAttribute("msg"); // 꺼내온 메시지 속성값 삭제하기
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원목록</title>
+<title>영상물 목록</title>
+<style type="text/css">
+body {
+	background-color: #000;
+}
+</style>
 </head>
 <body>
 
@@ -50,13 +56,13 @@ session.removeAttribute("msg"); // 꺼내온 메시지 속성값 삭제하기
 		} else {
 		%>
 		<tr>
-			<td colspan="5">회원정보가 없습니다.</td>
+			<td colspan="5">영상의 정보가 없습니다.</td>
 		</tr>
 		<%
 			}
 		%>
 		<tr>
-			<td colspan="4"><a href="insert.do">[회원정보 등록]</a></td>
+			<td colspan="4"><a href="insert.do">[영상물 등록]</a></td>
 
 		</tr>
 	</table>

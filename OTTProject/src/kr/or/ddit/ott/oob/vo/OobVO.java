@@ -9,6 +9,7 @@ public class OobVO {
 	private String oobCon;
 	private Date oobDate;
 	
+	
 	public OobVO() {
 		super();
 	}

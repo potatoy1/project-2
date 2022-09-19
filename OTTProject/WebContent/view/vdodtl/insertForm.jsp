@@ -1,3 +1,5 @@
+<%@page import="comm.vo.AtchFileVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,10 +32,7 @@
 </head>
 <body>
    <form action="insert.do" method="post" enctype="multipart/form-data">
-   
-   
-   
-   
+
       <table>
       <tr> 
          <td>영상물 번호</td>
@@ -45,54 +44,49 @@
          
          <ul class="list-group1 mt-5">
 		<li class="list-group-item"><input class="form-check-input me-1"
-			type="checkbox" value="" id="firstCheckboxStretched"> <label
+			type="checkbox" value="1" id="firstCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="firstCheckboxStretched">
 			로맨스
 				</label></li>
 		<li class="list-group-item2"><input class="form-check-input me-1"
-			type="checkbox" value="" id="secondCheckboxStretched"> <label
+			type="checkbox" value="2" id="secondCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="secondCheckboxStretched"> 
 			코미디
 				</label></li>
 		<li class="list-group-item2" style="border-top-width: 1;"><input class="form-check-input me-1"
-			type="checkbox" value="" id="thirdCheckboxStretched"> <label
+			type="checkbox" value="3" id="thirdCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="thirdCheckboxStretched">스릴러
 				</label></li>
 	</ul>
 	
 	<ul class="list-group1">
 		<li class="list-group-item"><input class="form-check-input me-1"
-			type="checkbox" value="" id="fourthCheckboxStretched"> <label
+			type="checkbox" value="4" id="fourthCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="fourthCheckboxStretched">미스터리
 				</label></li>
 		<li class="list-group-item"><input class="form-check-input me-1"
-			type="checkbox" value="" id="fifthCheckboxStretched"> <label
+			type="checkbox" value="5" id="fifthCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="fifthCheckboxStretched">액  션
 				</label></li>
 		<li class="list-group-item"><input class="form-check-input me-1"
-			type="checkbox" value="" id="sixthCheckboxStretched"> <label
+			type="checkbox" value="6" id="sixthCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="sixthCheckboxStretched">판타지
 				</label></li>
 	</ul>
 	<ul class="list-group1">
 		<li class="list-group-item"><input class="form-check-input me-1"
-			type="checkbox" value="" id="seventhCheckboxStretched"> <label
+			type="checkbox" value="7" id="seventhCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="seventhCheckboxStretched">공포
 				</label></li>
 		<li class="list-group-item"><input class="form-check-input me-1"
-			type="checkbox" value="" id="eighthCheckboxStretched"> <label
+			type="checkbox" value="8" id="eighthCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="eighthCheckboxStretched">키즈
 				</label></li>
 		<li class="list-group-item"><input class="form-check-input me-1"
-			type="checkbox" value="" id="ninethCheckboxStretched"> <label
+			type="checkbox" value="9" id="ninethCheckboxStretched" name="vdotyNum"> <label
 			class="form-check-label stretched-link" for="ninethCheckboxStretched">애니
 				</label></li>
 	</ul>
-         
-         
-         
-         
-         
          
          </td>
          
@@ -126,5 +120,10 @@
    </form>
    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+   <script type="text/javascript">
+		var frm = document.frm;
+		var vdm_chk = document.querySelectorAll('.form-check-input:checked');
+		console.log(vdm_chk);
+   </script>
 </body>
 </html>

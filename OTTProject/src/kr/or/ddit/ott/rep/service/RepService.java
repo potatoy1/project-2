@@ -1,5 +1,7 @@
 package kr.or.ddit.ott.rep.service;
 
+import java.util.List;
+
 import kr.or.ddit.ott.rep.dao.IRepDAO;
 import kr.or.ddit.ott.rep.dao.RepDAO;
 import kr.or.ddit.ott.rep.vo.RepVO;
@@ -22,7 +24,7 @@ public class RepService implements IRepService{
 	}
 
 	@Override
-	public int registerReb(RepVO rv) {
+	public int registerRep(RepVO rv) {
 		int cnt = repDao.insertRep(rv);
 		return cnt;
 	}
@@ -49,5 +51,11 @@ public class RepService implements IRepService{
 	public boolean checkRep(String repNum) {
 		boolean chk = repDao.checkReb(repNum);
 		return chk;
+	}
+
+	@Override
+	public List<RepVO> getAllRepList(RepVO rv) {
+		List<RepVO> repList = repDao.getAllRepList(rv);
+		return repList;
 	}
 }

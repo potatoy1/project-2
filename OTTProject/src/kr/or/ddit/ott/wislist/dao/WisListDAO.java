@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import kr.or.ddit.ott.mem.vo.MemberVO;
-import kr.or.ddit.ott.ntc.vo.NtcVO;
 import kr.or.ddit.ott.wislist.vo.WisListVO;
 import util.MyBatisUtil;
 
@@ -17,6 +15,9 @@ public class WisListDAO implements IWisListDAO {
 	public static WisListDAO getInstance() {
 		return instance;
 	}
+    public WisListDAO() { 
+       sqlSession = MyBatisUtil.getInstance(true);
+    }
 	
 	public int insert(WisListVO vo) {
 		int cnt = sqlSession.insert("wislist.insert", vo);
@@ -31,7 +32,6 @@ public class WisListDAO implements IWisListDAO {
 	public int delete(String wislistNum) {
 		int cnt = sqlSession.delete("wislist.delete",wislistNum);
 		return cnt;
-	
 	}
 
 }

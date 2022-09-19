@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import kr.or.ddit.ott.mem.service.IMemberService;
 import kr.or.ddit.ott.mem.service.MemberService;
@@ -33,7 +32,7 @@ public class MemberShipController extends HttpServlet {
 		String memNal = req.getParameter("memNal");
 		String memBir = req.getParameter("memBir");
 
-		// 2. 서비스 객체 생성하기
+		// 2. 서비스 객체 생성하기 해봅시다
 		IMemberService memService = MemberService.getInstance();
 		
 		// 3. 회원정보 등록하기
@@ -56,15 +55,7 @@ public class MemberShipController extends HttpServlet {
 			msg = "실패";
 		}
 
-		HttpSession session = req.getSession();
-		session.setAttribute("msg", msg);
-
-		// 4. 목록 조회 화면으로 이동
-//		req.getRequestDispatcher("/member/login.do").forward(req, resp);
-
-		String redirectUrl = req.getContextPath() + "/member/login.do";
-
-		resp.sendRedirect(redirectUrl);
+		resp.getWriter().write(msg);
 
 	}
 }

@@ -9,48 +9,77 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 내용</title>
-<link rel="stylesheet" href="../view/css/board.css">
+<title>공지사항 글 내용</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../view/css/main.css">
+<style>
+div {
+	/* border: 3px solid red; */
+}
+.btn{
+    margin: 10px;
+}
+
+.bt_wrap{
+	text-align: center;
+}
+</style>
 </head>
 <body>
 
 <form id="id_rform" action="update.do" method="post">
     <input type="hidden" name="nm_gnum" value="">
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>공지사항</strong>
-            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
-        </div>
-        <div class="board_view_wrap">
-            <div class="board_view">
-                <div class="title">
-                    <input type="text" name="ntcTit" value="${vo.ntcTit}" style="font-size: 2rem; border: none; width: 70%;">
+
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <%@include file="../../header.jsp"%>
+
+        <!-- Main -->
+		<article id="main">
+            <div class="board_wrap">
+                <div class="board_title" style="padding: 10px;">
+                    <h2>공지사항</h2>
                 </div>
-                <div class="info">
-                    <dl class="abc">
-                        <dt>글 번호</dt>
-                        <dd>${vo.ntcNum}</dd>
-                    </dl>
-                    <dl>
-                        <dt>작성자</dt>
-                        <dd><input type="text" name="" value="관리자" disabled style="border: none; background: white;"></dd>
-                    </dl>
-                    <dl>
-                        <dt>작성일</dt>
-                        <dd><input type="date" name="ntcDate" value=""  style="border: none">${vo.ntcDate}</dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    <textarea name="ntcCon" cols="75" rows="10" required>${vo.ntcCon}</textarea>
+                <div class="board_view_wrap">
+                    <div class="board_view">
+                        <dt class="mt-3" style="font-weight: 800;">제목</dt>
+                        <div class="title" style="padding-bottom: 20px;">
+                            <input type="text" name="ntcTit" value="${vo.ntcTit}" disabled style="border: none;">
+                        </div>
+                        <div class="info">
+                            <dl class="abc">
+                                <dt>글 번호</dt>
+                                <dd>${vo.ntcNum}</dd>
+                            </dl>
+                            <!-- <dl>
+                                <dt>작성자</dt>
+                                <dd><input type="text" name="" value="관리자" disabled style="border: none; background: white;"></dd>
+                            </dl> -->
+                            <dl>
+                                <dt>작성일</dt>
+                                <dd>${vo.ntcDate}</dd>
+                            </dl>
+                        </div>
+                        <div class="cont" style="height: 300px;">
+                            <textarea placeholder="내용 입력" name="ntcCon" placeholder="내용"  style="height: 290px;">
+                                ${vo.ntcCon}
+                            </textarea>
+
+                        </div>
+                    </div>
+                    <div class="bt_wrap">
+                        <button type="button" class="btn btn-outline-light" 
+						onclick="location.href='update.do?ntcNum=${vo.ntcNum}'">수정하기</button>
+                        <button type="button" class="btn btn-outline-light" 
+						onclick="location.href='list.do'">뒤로가기</button>
+                        
+                    </div>
                 </div>
             </div>
-            <div class="bt_wrap">
-                <a href="update.do?ntcNum=${vo.ntcNum}">수정하기</a>
-                <a href="list.do">뒤로가기</a>
-                
-            </div>
-        </div>
-    </div>
+        </article>
+    </div> 
 </form>
 
 

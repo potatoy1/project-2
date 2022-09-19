@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lkhis">
+
+	<insert id="insert" parameterType="LkhisVO">
+  
+	     INSERT INTO lkhis (lkhis_num, mem_num, vdodtl_num, lkhis_down) 
+	     VALUES (lkhis_seq.nextval, #{memNum}, #{vdodtlNum}, sysdate) 
+ 
+	</insert>
+
+	<resultMap type="LkhisVO" id="lkhisMap">
+
+		<result property="lkhisNum" column="lkhis_num" />
+		<result property="memNum" column="mem_num" />
+		<result property="vdodtlNum" column="vdodtl_num" />
+		<result property="lkhisDown" column="lkhis_down" />
+		
+
+	</resultMap>
+
+	<select id="getAllLkhisList" resultMap="lkhisMap">
+            
+        SELECT * FROM lkhis 
+
+	</select>
+
+	<delete id="delete" parameterType="String">
+  
+        DELETE FROM lkhis WHERE lkhis_num = #{lkhisNum}
+   
+	</delete>
+</mapper>

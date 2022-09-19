@@ -12,10 +12,8 @@ session.removeAttribute("msg");%>
 <head>
 	<title>공지사항</title>
 	<meta charset="utf-8" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-		rel="stylesheet" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../view/css/main.css" />
 
 	<style>
@@ -69,12 +67,11 @@ session.removeAttribute("msg");%>
 												<%=oobList.get(i).getOobTit()%>
 											</a>
 										</div>
-										<div class="con"></div>
 										<div class="date">
 											<%=oobList.get(i).getOobDate()%>
 										</div>
 									</div>
-									<% } } else { } %>
+									<% } } else {  } %>
 						</div>
 						<div style="margin: 30px;">
 							<button type="button" class="btn btn-light" onclick="location.href='../oob/insert.do'">새글 작성</button>
@@ -96,7 +93,12 @@ session.removeAttribute("msg");%>
 	<script src="../view/js/breakpoints.min.js"></script>
 	<script src="../view/js/util.js"></script>
 	<script src="../view/js/main.js"></script>
+	<script>
+		$("p.title").on('click', function () {
+			$(this).next(".con").slideToggle(100);
+		});
 
+	</script>
 </body>
 
 </html>

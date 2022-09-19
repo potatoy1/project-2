@@ -50,9 +50,6 @@
                             <div class="bt_wrap" style="padding: 20px;">
                                 <input type="submit" value="등록">
                                 <input type="button" onclick="location.href='../oob/list.do'" value="취소">
-                                <!-- <button type="button" class="btn btn-outline-light"
-                                onclick="location.href='../oob/list.do'">취소</button> -->
-                                <!-- <a href="list.do">취소</a> -->
                             </div>
                         </div>
                     </div>
@@ -78,9 +75,6 @@
 	    	}
         </script>
 
-</body>
-
-</html>
 </form>
 </body>
 

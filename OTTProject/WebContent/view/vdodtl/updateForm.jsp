@@ -35,8 +35,8 @@
 			</tr>
 			<tr>
 				<td>영상물 요약 정보 :</td>
-				<td><input type="text" name="vdodtlSumy"
-					value="<%=vo.getVdodtlSumy()%>"></td>
+				<td><textarea rows="3" cols="20" name="vdodtlSumy"><%=vo.getVdodtlSumy()%></textarea>
+					</td>
 			</tr>
 
 			<tr>
@@ -44,7 +44,8 @@
 				<td><textarea rows="3" cols="20" name="vdodtlDtl"><%=vo.getVdodtlDtl()%></textarea></td>
 			</tr>
 			<tr>
-				<td>첨부파일 :</td>
+				<td>첨부파일 이미지 :</td>
+         		<td><input type="file" name="atchFile"></td>
 			<td>
 				<%
  					if (atchFileList != null) {

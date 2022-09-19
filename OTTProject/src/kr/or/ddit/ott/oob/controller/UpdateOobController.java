@@ -25,7 +25,7 @@ public class UpdateOobController extends HttpServlet{
 		OobVO ov = oobService.getOob(oobNum);
 		
 		req.setAttribute("ov", ov);
-		req.getRequestDispatcher("/view/oob/updateForm.jsp");
+		req.getRequestDispatcher("/view/oob/updateForm.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -43,7 +43,7 @@ public class UpdateOobController extends HttpServlet{
 		ov.setOobTit(oobTit);
 		ov.setOobCon(oobCon);
 		
-		int cnt = oobService.registerOob(ov);
+		int cnt = oobService.modifyOob(ov);
 		
 		String msg = "";
 		

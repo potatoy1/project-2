@@ -44,7 +44,7 @@
       if(endRow > (cnt-1)){
          endRow = cnt-1;
       }
-   %>
+%>
 
 <!DOCTYPE html>
 <html>
@@ -52,87 +52,116 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="../view/css/board.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="../view/css/main.css">
+
+<style>
+	div {
+		/* border: 3px solid red; */
+	}
+</style>
 </head>
 
 <body>
 
-	<div class="board_wrap">
-		<div class="board_title">
-			<strong>공지사항</strong>
-			<h3>공지사항을 빠르고 정확하게 안내해드립니다.</h3>
-			<form action="search.do" method="POST">
-			    <div class="mx-quto input-group mt-5">
-			        <mx-auto>
-			            <input name="query" type="text" class="form-control" placeholder="검색어 입력" aria-label="search" aria-describedby="button-addon2">
-			        </mx-auto>
-			        <button class="btn btn-success" type="submit" id="button-addon2">검색</button>
-			    </div>
-			</form>
-		</div>
-		<div class="board_list_wrap">
-			<div class="board_list">
-			
-				<div class="top">
-					<div class="num">번호</div>
-					<div class="title">제목</div>
-					<div class="date">작성일</div>
-					<div class="delete">삭제</div>
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<%@include file="../../header.jsp" %>
+
+		<!-- Main -->
+		<article id="main">
+			<header>
+				<div style="text-align: center; position: relative; ;top: 70px;">
+					<h2>고객센터</h2>
+					<p>무엇이든 물어보세요!</p>
 				</div>
-				
+			</header>
+			<section class="wrapper style5">
+				<div class="inner" style="text-align: center;">
+					<div class="btn-group" role="group" aria-label="Basic outlined example" style="padding: 60px;">
+						<button type="button" class="btn btn-outline-primary"
+							style="color: white; width: 700px; border-color: white;" onclick="location.href='../ntc/list.do'">
+							공지사항</button>
+						<button type="button" class="btn btn-outline-primary"
+							style="color: white; width: 700px;border-color: white;" onclick="location.href='../oob/list.do'">
+							1:1 문의</button>
+					</div>
 
-				<%
-					for (int i = startRow; i <= endRow; i++) {
-				%>
+					<form action="search.do" class="mt-5 container" method="POST">
+						<div class="row">
+							<input name="query" type="text" class="col-2 offset-9" style="height:50px" placeholder="검색어 입력" aria-describedby="button-addon2">
+							<button class="btn btn-success col-1 text-center" style="padding:0" type="submit" id="button-addon2">검색</button>
+						</div>
+					</form>
+					<div class="board_list">
+						
+						<div class="top">
+							<div class="num">번호</div>
+							<div class="title">제목</div>
+							<div class="date">작성일</div>
+							<div class="delete">삭제</div>
+						</div>
+						
 
-				<div>
-					<div class="num">
-						<%=ntcList.get(i).getNtcNum()%>
+						<%
+							for (int i = startRow; i <= endRow; i++) {
+						%>
+
+						<div>
+							<div class="num">
+								<%=ntcList.get(i).getNtcNum()%>
+							</div>
+							<div class="title">
+								<a class="ntc"
+									href="detail.do?ntcNum=<%=ntcList.get(i).getNtcNum()%>"> <%=ntcList.get(i).getNtcTit()%>
+								</a>
+							</div>
+							<div class="date">
+								<%=ntcList.get(i).getNtcDate()%>
+							</div>
+							<div class="delete form-check">
+								<input class="form-check-input" type="checkbox" name="check" style="float:none; margin-left:0em" value="<%=ntcList.get(i).getNtcNum()%>">
+							</div>
+						</div>
+						<%
+						};
+						%>
+
 					</div>
-					<div class="title">
-						<a class="ntc"
-							href="detail.do?ntcNum=<%=ntcList.get(i).getNtcNum()%>"> <%=ntcList.get(i).getNtcTit()%>
-						</a>
+					<div class="board_page" style="color: white; padding-top: 20px;">
+						<% if(startPage>pageBlock){ %>
+						<a class="bt first" href="list.do?pageNum=<%=startPage-pageBlock%>">&nbsp;Prev</a>
+						<%} %>
+						
+						<% for(int i=startPage;i<=endPage;i++){ %>
+							<% if(i == currentPage){ %>
+								<a class="num on" href="list.do?pageNum=<%=i%>"><%=i %>&nbsp;</a>
+							<% } else { %>
+								<a class="num" href="list.do?pageNum=<%=i%>"><%=i %>&nbsp;</a>
+							<% } %>
+						<%} %>
+					
+						<% if(endPage<pageCount){ %>
+						<a class="bt last" href="list.do?pageNum=<%=startPage+pageBlock%>">&nbsp;Next</a>
+						<%} %>
+
 					</div>
-					<div class="con"></div>
-					<div class="date">
-						<%=ntcList.get(i).getNtcDate()%>
-					</div>
-					<div class="delete">
-						<input id="check" type="checkbox" name="check" value="<%=ntcList.get(i).getNtcNum()%>">
+					<div style="margin: 30px;">
+						<button type="button" class="btn btn-light" onclick="location.href='../ntc/regist.do'">새글 작성</button>
+						<button type="button" class="btn btn-outline-light" id="del_btn" onclick="f_del()">선택 삭제</button>
+						<!-- <input  type="button" id="del_btn" value="선택 삭제" onclick="f_del()"> -->
 					</div>
 				</div>
-				<%
-				};
-				%>
-			</div>
+		</article>
 
-			<div class="board_page">
-				<% if(startPage>pageBlock){ %>
-			      <a class="bt first" href="list.do?pageNum=<%=startPage-pageBlock%>">&nbsp;Prev</a>
-			   <%} %>
-			    
-			   <% for(int i=startPage;i<=endPage;i++){ %>
-					<% if(i == currentPage){ %>
-						<a class="num on" href="list.do?pageNum=<%=i%>"><%=i %>&nbsp;</a>
-					<% } else { %>
-						<a class="num" href="list.do?pageNum=<%=i%>"><%=i %>&nbsp;</a>
-					<% } %>
-			   <%} %>
-			  
-			   <% if(endPage<pageCount){ %>
-			      <a class="bt last" href="list.do?pageNum=<%=startPage+pageBlock%>">&nbsp;Next</a>
-			   <%} %>
+		<!-- Footer -->
+		<%@include file="../../footer.jsp" %>
 
-			</div>
-			<div class="bt_wrap">
-				<a href="../ntc/regist.do" class="on">새글 작성</a>
-				<input id="del_btn" type="button"  value="체크박스 삭제" onclick="f_del()">
-			</div>
-		</div>
 	</div>
+
 	<%
 		if (msg.equals("성공")) {
 	%>
@@ -168,7 +197,22 @@
 		   })
 		}
 	</script>
+	<!-- Scripts -->
+	<script src="../view/js/jquery.min.js"></script>
+	<script src="../view/js/jquery.scrollex.min.js"></script>
+	<script src="../view/js/jquery.scrolly.min.js"></script>
+	<script src="../view/js/browser.min.js"></script>
+	<script src="../view/js/breakpoints.min.js"></script>
+	<script src="../view/js/util.js"></script>
+	<script src="../view/js/main.js"></script>
+	
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+	<script>
+			$("p.title").on('click', function () {
+				$(this).next(".con").slideToggle(100);
+			});
+
+	</script>
 	</body>
 	</html>

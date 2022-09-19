@@ -1,5 +1,7 @@
 package kr.or.ddit.ott.rep.dao;
 
+import java.util.List;
+
 import kr.or.ddit.ott.rep.vo.RepVO;
 
 public interface IRepDAO {
@@ -13,6 +15,8 @@ public interface IRepDAO {
 	public RepVO getReb(String repNum); //답글 가져오기
 	
 	public boolean checkReb(String repNum); // 답글 있나없나
+	
+	public List<RepVO> getAllRepList(RepVO rv); // 모든 댓글 리스트 가져오기
 	
 	
 

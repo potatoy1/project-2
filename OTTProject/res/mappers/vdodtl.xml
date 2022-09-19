@@ -49,16 +49,18 @@
 
 	<select id="getAllVdodtlList" resultMap="vdodtlMap">
 
-		select * from vdodtl
+		select *
+		from vdodtl vd, atch_file_detail at
+		where vd.atch_file_id = at.atch_file_id
 
 	</select>
 
 	<select id="selectOne" parameterType="String" resultMap="vdodtlMap">
 
 		select *
-		from vdodtl
+		from vdodtl vd, atch_file_detail at
 		where vdodtl_num = #{vdodtlNum}
-
+		and vd.atch_file_id = at.atch_file_id
 	</select>
 
 	<select id="checkVdodtl" parameterType="String" resultType="int">

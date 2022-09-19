@@ -40,4 +40,12 @@ public class MemberService implements IMemberService {
 		return cnt;
 	}
 
+	@Override
+	public int memberPwfind(MemberVO mv) {
+		int cnt = memDao.findPw(mv);
+		return cnt;
+	}
+
+
+
 }

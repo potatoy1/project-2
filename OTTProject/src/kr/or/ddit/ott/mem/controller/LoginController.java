@@ -2,6 +2,7 @@ package kr.or.ddit.ott.mem.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.channels.SeekableByteChannel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +36,6 @@ public class LoginController extends HttpServlet {
 		IMemberService memService = MemberService.getInstance();
 
 		// 2. 서비스 객체 생성하기
-
 		MemberVO mv = new MemberVO();
 		mv.setMemEm(memEm);
 		mv.setMemPw(memPw);

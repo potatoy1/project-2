@@ -16,7 +16,9 @@
 		<typeAlias type="kr.or.ddit.ott.ntc.vo.NtcVO" alias="ntcVO" />
 		<typeAlias type="kr.or.ddit.ott.vdodtl.vo.VdodtlVO" alias="vdodtlVO" />
 		<typeAlias type="kr.or.ddit.ott.oob.vo.OobVO" alias="oobVO" />
+		<typeAlias type="kr.or.ddit.ott.rep.vo.RepVO" alias="repVO" />
 		<typeAlias type="kr.or.ddit.ott.wislist.vo.WisListVO" alias="WisListVO" />
+		<typeAlias type="kr.or.ddit.ott.lkhis.vo.LkhisVO" alias="LkhisVO" />
  		<typeAlias type="comm.vo.AtchFileVO" alias="atchVO" />
 	</typeAliases>
 
@@ -38,11 +40,13 @@
 
 	<mappers>
  		<mapper resource="mappers/member.xml" />
-		<mapper resource="mappers/atchFile.xml" />
 		<mapper resource="mappers/ntc.xml" />
 		<mapper resource="mappers/vdodtl.xml" />
 		<mapper resource="mappers/oob.xml" />
+		<mapper resource="mappers/rep.xml" />
 		<mapper resource="mappers/wisList.xml" />
+		<mapper resource="mappers/lkhis.xml" />
+		<mapper resource="mappers/atchFile.xml" />
 	</mappers>
 	
 </configuration>

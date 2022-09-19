@@ -1,6 +1,8 @@
 package kr.or.ddit.ott.rep.dao;
 
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import kr.or.ddit.ott.rep.vo.RepVO;
@@ -20,14 +22,9 @@ public class RepDAO implements IRepDAO {
 		sqlSession = MyBatisUtil.getInstance(true);
 	}
 
-	public int insertMember(RepVO rv) {
-		int cnt = sqlSession.insert("");
-		return cnt;
-	}
-
 	@Override
 	public int insertRep(RepVO rv) {
-		int cnt = sqlSession.insert("rep.insertRep", rv); // ?
+		int cnt = sqlSession.insert("rep.insertRep", rv);
 		return cnt;
 	}
 
@@ -60,6 +57,12 @@ public class RepDAO implements IRepDAO {
 		}
 
 		return chk;
+	}
+
+	@Override
+	public List<RepVO> getAllRepList(RepVO rv) {
+		List<RepVO> repList = sqlSession.selectList("rep.allRepList", rv);
+		return repList;
 	}
 
 }

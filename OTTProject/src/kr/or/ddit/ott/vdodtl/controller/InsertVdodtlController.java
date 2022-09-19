@@ -46,7 +46,7 @@ public class InsertVdodtlController extends HttpServlet {
 		// 첨부파일 저장하기
 		AtchFileVO atchFileVO = fileService.saveAtchFileList(req);
 
-		// 3. 회원정보 등록하기
+		// 3. 영상물 등록하기
 		VdodtlVO vo = new VdodtlVO();
 		vo.setVdodtlNum(vdodtlNum);
 		vo.setVdotyNum(vdotyNum);

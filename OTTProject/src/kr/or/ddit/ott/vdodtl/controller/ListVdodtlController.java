@@ -22,7 +22,7 @@ public class ListVdodtlController extends HttpServlet {
 		// 1. 서비스 객체 생성하기
 		IVdodtlService vdodtlService = VdodtlService.getInstance();
 
-		// 2. 회원목록 조회
+		// 2. 동영상 목록 조회
 		List<VdodtlVO> vdodtlList = vdodtlService.getAllVdodtlList();
 
 		req.setAttribute("vdodtlList", vdodtlList);

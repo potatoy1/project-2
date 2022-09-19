@@ -8,6 +8,7 @@
 
  	List<AtchFileVO> atchFileList = (List<AtchFileVO>) request.getAttribute("atchFileList");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,26 @@
 	}
 	.btn-danger {
 		margin-left: 50px;
+	}
+	body {
+ 		background-color: #000; 
+	}
+	.col-md-8 {
+		background-color: #000;
+		color: #b3b3b3;
+	}
+	input {
+		background-color: #191919;
+		color: white;
+	}
+	@media (min-width: 768px)
+		.col-md-4 {
+	    -ms-flex: 0 0 33.333333%;
+	    flex: 0 0 33.333333%;
+	    max-width: 100%;
+	}
+	.row {
+	    background: #000;
 	}
 </style>
 </head>
@@ -62,10 +83,8 @@
 		</div>
 		<div class="cardd">
 			<div><button type="button" class="btn btn-primary"><a href="list.do">[목록]</a></button></div>
-			<div><button type="button" class="btn btn-success"><a
-				href="update.do?vdodtlNum=<%=vo.getVdodtlNum()%>">[영상물 수정]</a></button></div>
-			<div><button type="button" class="btn btn-danger"><a
-				href="delete.do?vdodtlNum=<%=vo.getVdodtlNum()%>">[영상물 삭제]</a></button></div>
+			<div><button type="button" class="btn btn-success"><a href="update.do?vdodtlNum=<%=vo.getVdodtlNum()%>">[영상물 수정]</a></button></div>
+			<div><button type="button" class="btn btn-danger"><a href="delete.do?vdodtlNum=<%=vo.getVdodtlNum()%>">[영상물 삭제]</a></button></div>
 		</div>
 	</form>
 

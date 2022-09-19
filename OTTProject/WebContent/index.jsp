@@ -6,7 +6,9 @@
 <meta charset="UTF-8">
 <title>메인페이지</title>
 <link rel="stylesheet" href="view/css/main.css" />
-
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet"> -->
 </head>
 <body class="landing is-preload">
 
@@ -24,8 +26,8 @@
 					다양한 디바이스에서 시청하세요. 원하실 때 해지할 수 있어요.<br />
 					</p>
 				<ul class="actions special">
-					<li><a href="#" class="button primary">회원가입</a></li>
-					<li><a href="" class="button primary">로그인</a></li>
+			<li><a href="/OTTProject/member/membership.do" class="button primary">회원가입</a></li>
+					<li><a href="/OTTProject/member/login.do" class="button primary">로그인</a></li>
 				</ul>
 			</div>
 			<a href="#one" class="more scrolly">구경해보기</a>
@@ -35,27 +37,21 @@
 		<section id="one" class="wrapper style1 special">
 			<div class="inner">
 				<header class="major">
-					<h1>디즈니++ 데이와 함께 당신이 사랑하는 모든 이야기와 콘텐츠를 즐기세요.</h1>
+					<h1 style="font-size: 35px;">디즈니++와 함께 당신이 사랑하는 모든 이야기와 콘텐츠를 즐기세요.</h1>
 				</header>
-				<ul class="icons major">
-					<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
-					<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
-					<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
-				</ul>
+				
 			</div>
 		</section>
 
 		<!-- Two -->
 		<section id="two" class="wrapper alt style2">
 			<section class="spotlight">
-				<div class="image"><img src="view/img/pcmoblie.jpg" /></div>
+				<div class="image"><img src="/view/img/conntents/pcmoblie.jpg" /></div>
 				<div class="content">
 					<h1>취향에 따라 골라보는 다양한<br />
 						컨텐츠가 모두 한자리에</h1>
 					<p>디즈니++는 디즈니, 픽사, 마블, 스타워즈, 내셔널지오그래픽, Star의 최고 콘텐츠들을 모두 한곳에 모아 제공합니다.<br /></p>
 					
-					<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla
-						nullam aenean mi ligula.</p>
 				</div>
 			</section>
 			<section class="spotlight">
@@ -77,16 +73,6 @@
 					<p>각종 영화와 시리즈를 스마트폰, 태블릿, 노트북, TV에서 무제한으로 스트리밍하세요. 추가 요금이 전혀 없습니다.</p>
 				</div>
 			</section>
-<!-- 			<section class="spotlight"> -->
-<!-- 				<div class="image"><img src="images/pic03.jpg" alt="" /></div> -->
-<!-- 				<div class="content"> -->
-<!-- 					<h2>Augue eleifend aliquet<br /> -->
-<!-- 						sed condimentum</h2> -->
-<!-- 					<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla -->
-<!-- 						nullam aenean mi ligula.</p> -->
-<!-- 				</div> -->
-<!-- 			</section> -->
-<!-- 		</section> -->
 
 		<!-- Three -->
 		<section id="three" class="wrapper style3 special">
@@ -100,19 +86,19 @@
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original" width="450" height="350" alt="Sound Track #1" loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original" width="450" height="300" alt="Sound Track #1" loading="lazy">
 						</picture>
 					</div>
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original" width="450" height="350" alt="Grid " loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original" width="450" height="300" alt="Grid " loading="lazy">
 						</picture>
 					</div>
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original" width="450" height="350" alt=" Rookie Cops" loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original" width="450" height="300" alt=" Rookie Cops" loading="lazy">
 						</picture>
 					</div>
 				</div>
@@ -120,19 +106,19 @@
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original" width="450" height="350" alt="Sound Track #1" loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original" width="450" height="300" alt="Sound Track #1" loading="lazy">
 						</picture>
 					</div>
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original" width="450" height="350" alt="Grid " loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original" width="450" height="300" alt="Grid " loading="lazy">
 						</picture>
 					</div>
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original" width="450" height="350" alt=" Rookie Cops" loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original" width="450" height="300" alt=" Rookie Cops" loading="lazy">
 						</picture>
 					</div>
 				</div>
@@ -140,19 +126,19 @@
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original" width="450" height="350" alt="Sound Track #1" loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/d2653e611500f8460620be11ca39f7ac727cdf87f91f001f5fb077bd2a49095c/original" width="450" height="300" alt="Sound Track #1" loading="lazy">
 						</picture>
 					</div>
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original" width="450" height="350" alt="Grid " loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/f48a3c9eeea44f75f97e5545abe3216ac70ea05d36458794d6093fdc7512efbe/original" width="450" height="300" alt="Grid " loading="lazy">
 						</picture>
 					</div>
 					<div class="videoimg">
 						<picture class="">
 							<source media="(min-width: 1025px)" srcset="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original">
-							<img src="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original" width="450" height="350" alt=" Rookie Cops" loading="lazy">
+							<img src="//cnbl-cdn.bamgrid.com/assets/f0a2ffa3d2621e8ab5a2c720e18cc6a8e2dd1718b42ce0134eeef3b429014b34/original" width="450" height="300" alt=" Rookie Cops" loading="lazy">
 						</picture>
 					</div>
 				</div>

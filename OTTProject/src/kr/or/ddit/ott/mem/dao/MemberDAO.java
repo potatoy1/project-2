@@ -48,12 +48,12 @@ public class MemberDAO implements IMemberDAO {
 	}
 
 //	// 비밀번호찾기
-//	public int findPw(MemberVO mv) {
-//
-//		int cnt = sqlSession.selectOne("member.findPwMember", mv);
-//
-//		return cnt;
-//	}
+	public int findPw(MemberVO mv) {
+
+		int cnt = sqlSession.update("member.findPwMember", mv);
+
+		return cnt;
+	}
 //
 //	// 마이페이지 본인정보 수정
 //	public int MyPageMember(MemberVO mv) {

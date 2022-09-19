@@ -14,7 +14,7 @@ import util.*;
 
 
 public class AtchFileServiceImpl implements IAtchFileService {
-	private static final String UPLOAD_DIR = "D:/D_Other/upload_files";
+	private static final String UPLOAD_DIR = "E:/D_Other/upload_files";
 	private static IAtchFileService fService;
 	private IAtchFileDAO fDao;
 
@@ -32,6 +32,9 @@ public class AtchFileServiceImpl implements IAtchFileService {
 	@Override
 	public AtchFileVO saveAtchFileList(HttpServletRequest req) {
 		// 웹애플리케이션 루트 디렉토리 기준 업로드 경로 설정하기
+		
+//		String src = req.getServletContext().getRealPath("/images");
+//		System.out.println("src경로:" + src);
 		File uploadDir = new File(UPLOAD_DIR);
 		if (!uploadDir.exists()) {
 			uploadDir.mkdir();
@@ -64,6 +67,8 @@ public class AtchFileServiceImpl implements IAtchFileService {
 						saveFilePath = UPLOAD_DIR + File.separator + saveFileName;
 						storeFile = new File(saveFileName);
 					} while (storeFile.exists());
+					
+					System.out.println("세이브파일패스" + saveFilePath);
 					part.write(saveFilePath); // 파일 저장
 
 					// 확장자 추출

@@ -14,7 +14,7 @@ import kr.or.ddit.ott.wislist.service.IWisListService;
 import kr.or.ddit.ott.wislist.service.WisListService;
 import kr.or.ddit.ott.wislist.vo.WisListVO;
 
-@WebServlet(value = "/wislist/wislist.do")
+@WebServlet(value = "/wislist/list.do")
 public class WisListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,7 +27,7 @@ public class WisListController extends HttpServlet {
 
 		req.setAttribute("wisList", wisList);
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/wislist/wislist.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/wislist/list.jsp");
 
 		dispatcher.forward(req, resp);
 

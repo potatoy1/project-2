@@ -14,11 +14,13 @@ public class VdodtlVO {
 	private String vdodtlLik;	// 영상 좋아요 수
 	private String vdodtlImg;	// 영상 포스터 이미지
 	private long atchFileId = -1;
+	private String streFileNm;
 
 	public VdodtlVO() {}
 
 	public VdodtlVO(String vdodtlNum, String vdotyNum, String vdolevNum, String vdodtlNm, String vdodtlDtl,
-			String vdodtlSumy, String vdodtlPlytm, Date vdodtlRedt, String vdodtlLik, String vdodtlImg) {
+			String vdodtlSumy, String vdodtlPlytm, Date vdodtlRedt, String vdodtlLik, String vdodtlImg, long atchFileId,
+			String streFileNm) {
 		super();
 		this.vdodtlNum = vdodtlNum;
 		this.vdotyNum = vdotyNum;
@@ -30,14 +32,10 @@ public class VdodtlVO {
 		this.vdodtlRedt = vdodtlRedt;
 		this.vdodtlLik = vdodtlLik;
 		this.vdodtlImg = vdodtlImg;
+		this.atchFileId = atchFileId;
+		this.streFileNm = streFileNm;
 	}
 
-	public long getAtchFileId() {
-		return atchFileId;
-	}
-	public void setAtchFileId(long atchFileId) {
-		this.atchFileId = atchFileId;
-	}
 	public String getVdodtlNum() {
 		return vdodtlNum;
 	}
@@ -118,12 +116,29 @@ public class VdodtlVO {
 		this.vdodtlImg = vdodtlImg;
 	}
 
-	@Override
-	public String toString() {
-		return "VideodtlVO [vdodtlNum=" + vdodtlNum + ", vdotyNum=" + vdotyNum + ", vdolevNum=" + vdolevNum
-				+ ", vdodtlNm=" + vdodtlNm + ", vdodtlDtl=" + vdodtlDtl + ", vdodtlSumy=" + vdodtlSumy
-				+ ", vdodtlPlytm=" + vdodtlPlytm + ", vdodtlRedt=" + vdodtlRedt + ", vdodtlLik=" + vdodtlLik
-				+ ", vdodtlImg=" + vdodtlImg + "]";
+	public long getAtchFileId() {
+		return atchFileId;
 	}
 
+	public void setAtchFileId(long atchFileId) {
+		this.atchFileId = atchFileId;
+	}
+
+	public String getStreFileNm() {
+		return streFileNm;
+	}
+
+	public void setStreFileNm(String streFileNm) {
+		this.streFileNm = streFileNm;
+	}
+
+	@Override
+	public String toString() {
+		return "VdodtlVO [vdodtlNum=" + vdodtlNum + ", vdotyNum=" + vdotyNum + ", vdolevNum=" + vdolevNum
+				+ ", vdodtlNm=" + vdodtlNm + ", vdodtlDtl=" + vdodtlDtl + ", vdodtlSumy=" + vdodtlSumy
+				+ ", vdodtlPlytm=" + vdodtlPlytm + ", vdodtlRedt=" + vdodtlRedt + ", vdodtlLik=" + vdodtlLik
+				+ ", vdodtlImg=" + vdodtlImg + ", atchFileId=" + atchFileId + ", streFileNm=" + streFileNm + "]";
+	}
+
+	
 }

@@ -10,5 +10,7 @@ public interface IMemberService {
 	
 	public MemberVO memberLogin(MemberVO mv);
 	
+	public int memberPwfind(MemberVO mv);
+	
 
 }

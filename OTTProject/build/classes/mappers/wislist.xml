@@ -4,21 +4,34 @@
 
 	<insert id="insert" parameterType="WisListVO">
   
-	     INSERT INTO wislist (wislist_num,wislist_date) 
-	     VALUES (#{wislistNum}, #{wislistDate}) 
+	     INSERT INTO wislist (wislist_num, mem_num, vdodtl_num, wislist_date) 
+	     VALUES (WISLIST_SEQ.nextval, #{memNum}, #{vdodtlNum}, sysdate) 
  
 	</insert>
 
 	<resultMap type="WisListVO" id="wislistMap">
 
 		<result property="wislistNum" column="wislist_num" />
+		<result property="memNum" column="mem_num" />
+		<result property="vdodtlNum" column="vdodtl_num" />
 		<result property="wislistDate" column="wislist_date" />
+		<result property="vdotyNum" column="VDOTY_NUM" />
+		<result property="vdolevNum" column="VDOLEV_NUM" />
+		<result property="vdodtlNm" column="VDODTL_NM" />
+		<result property="vdodtlDtl" column="VDODTL_DTL" />
+		<result property="vdodtlSumy" column="VDODTL_SUMY" />
+		<result property="streFileNm" column="STRE_FILE_NM" />
+		
 
 	</resultMap>
 
 	<select id="getAllWisList" resultMap="wislistMap">
             
-        SELECT * FROM wislist WHERE wislist_num = #{wislistNum}
+        SELECT M.MEM_NUM, V.VDOTY_NUM, V.VDOLEV_NUM, V.VDODTL_NM, V.VDODTL_DTL, V.VDODTL_SUMY, A.STRE_FILE_NM
+		FROM MEM M, WISLIST W, VDODTL V, ATCH_FILE_DETAIL A
+		WHERE M.MEM_NUM = W.MEM_NUM
+		AND W.VDODTL_NUM = V.VDODTL_NUM
+		AND A.ATCH_FILE_ID = V.ATCH_FILE_ID
 
 	</select>
 

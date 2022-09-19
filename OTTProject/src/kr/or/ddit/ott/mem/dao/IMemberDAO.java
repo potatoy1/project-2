@@ -9,4 +9,7 @@ public interface IMemberDAO {
 	public int duplicateEmail(String memEm);
 	
 	public MemberVO login(MemberVO mv);
+	
+	public int findPw(MemberVO mv);
+	
 }
